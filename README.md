@@ -1,39 +1,30 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## inputbox_timer
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A flutter widget that executes a function after a timeout.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Getting started(TODO : publish pub.dev)
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add inputbox_timer to your pubspec.yaml file:
+```yaml
+dependencies:
+  inputbox_timer:
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+import 'package:inputbox_timer/inputbox_timer.dart';
+
+TimerInputField(
+  controller: controller,             // Required, TextEditingController
+  excuteOnTimeOut: callFunc,          // Required, call func after time out
+  timeoutSecond: 10,                  // Required, timeout seconds
+  maxLength: 5,                       // Optional, TextField maxLength property
+  keyboardType: TextInputType.number, // Optional, TextField TextInputType
+  readOnly: isTimeOver,               // Optional, TextField readOnly property
+)
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+TextEditingController should be placed outside the Build() function. Inside Build(), the value is lost due to re-rendering due to the setState function call.

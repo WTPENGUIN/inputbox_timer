@@ -31,8 +31,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
+  TextEditingController controller = TextEditingController();
   bool isTimeOver = false;
-
+  
   void callFunc() {
     setState(() {
       isTimeOver = true;
@@ -41,8 +42,6 @@ class MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -66,8 +65,8 @@ class MyHomePageState extends State<MyHomePage> {
               child: TimerInputField(
                 controller: controller,
                 excuteOnTimeOut: callFunc,
-                maxLength: 5,
                 timeoutSecond: 10, // 10 Seconds
+                maxLength: 5,
                 keyboardType: TextInputType.number,
                 readOnly: isTimeOver,
               ),
