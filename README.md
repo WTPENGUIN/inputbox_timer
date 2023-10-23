@@ -1,6 +1,6 @@
 ## inputbox_timer
 
-A flutter widget that executes a function after a timeout.
+A custom flutter textfield widget that executes a function after a timeout.
 
 ## Getting started(TODO : publish pub.dev)
 
